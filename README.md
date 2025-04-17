@@ -1,5 +1,18 @@
--- Defina sua chave aqui
-local requiredKey = "xenzhub123"
+-- Lista de keys válidas
+local validKeys = {
+    "xenzhub123",
+    "itachi"
+}
+
+-- Verifica se a key existe na lista
+local function isKeyValid(key)
+    for _, k in pairs(validKeys) do
+        if k == key then
+            return true
+        end
+    end
+    return false
+end
 
 -- Interface de verificação
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))()
@@ -14,16 +27,14 @@ keySection:addTextbox("Insira a Key", "Digite aqui...", function(value)
 end)
 
 keySection:addButton("Verificar Key", function()
-    if userKey == requiredKey then
+    if isKeyValid(userKey) then
         venyxKey:Notify("Sucesso", "Key correta! Carregando script...")
         venyxKey:toggle()
 
-        -- Aguarda a UI desaparecer
         wait(0.5)
 
-        -- Agora carrega seu script principal (ESP + Aimbot)
+        -- Carrega seu script principal aqui
         loadstring(game:HttpGet("https://raw.githubusercontent.com/xenzcheats/KMAMWD0MAWO/refs/heads/main/README.md"))()
-
     else
         venyxKey:Notify("Erro", "Key incorreta!")
     end
