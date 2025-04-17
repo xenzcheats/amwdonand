@@ -22,7 +22,7 @@ keySection:addButton("Verificar Key", function()
         wait(0.5)
 
         -- Agora carrega seu script principal (ESP + Aimbot)
-        loadstring(game:HttpGet("coloque_aqui_o_link_do_seu_script_final"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/xenzcheats/KMAMWD0MAWO/refs/heads/main/README.md"))()
 
     else
         venyxKey:Notify("Erro", "Key incorreta!")
